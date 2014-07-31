@@ -1,0 +1,295 @@
+/*
+Description: Template Stylesheet 
+Author: Wasabi Rabbit
+*/	
+
+//////// PreDefined Elements + Mixins [START] ////////
+
+
+
+.column, .columns {
+padding-left: 0.5em;
+padding-right: 0.5em;
+}
+
+
+// Define Primary Fonts
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+.open-sans {font-family: 'Open Sans', sans-serif;}
+
+// Define Primary Colors
+@white: white; 
+@lightgrey: #9d9fa2; 
+@grey: #666; 
+@darkgrey: #414042; 
+@orange: #f36a00; 
+@red: #ec3814; 
+@limegreen: #8dc63f;
+
+/*Background Colors*/
+.bg-white { background-color: @white; }
+.bg-lightgrey { background-color: @lightgrey; }
+.bg-grey { background-color: @grey; }
+.bg-darkgrey { background-color: @darkgrey; }
+.bg-red { background-color: @red; }
+.bg-orange { background-color: @orange; }
+.bg-limegreen { background-color: @limegreen; }
+
+/*Text Colors*/
+.text-white { color: @white; }
+.text-lightgrey { color: @lightgrey; }
+.text-grey { color: @grey; }
+.text-darkgrey { color: @darkgrey; }
+.text-red { color: @red; }
+.text-orange { color: @orange; }
+.text-limegreen { color: @limegreen; }
+
+/* Visibility */
+.hide, .Hide, .d-n {
+	display: none;
+}
+.show, .Show, .d-b {
+	display: block;
+}
+
+/*Text Enhance*/
+.text-cap, .uppercase { text-transform: uppercase;}
+.text-lower, .lowercase { text-transform: lowercase;}
+.text-underline, .underline { text-decoration: underline;}
+.text-dashed { border-bottom: 1px dashed;}
+.text-word-col { -moz-column-count: 2; -webkit-column-count: 2; column-count: 2;}
+.unbold {font-weight: normal;}
+
+// Force Full Width
+.Full-Width, .full-width, .fullwidth { max-width: 100% !important; width: 100% !important; }
+
+// Margins & Padding 
+.no-margin, .nomargin { margin: 0 !important; }
+.no-padding, .nopadding { padding: 0 !important; }
+.padding { width: 100%; margin-bottom: 4em; }
+
+// Animation Flicker Fix
+.backface { -webkit-backface-visibility:hidden;}
+// Device Render Animation
+.device-render { -webkit-transform: translateZ(0);}
+// Device Touch
+.fix-touch { -webkit-touch-callout: none; -webkit-user-select: none; }
+
+// Absolute Centering
+.abs-centered { overflow: auto; margin: auto !important; position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0; }
+
+// Rounded Corners
+.rounded-corners (@radius: 5px){ -webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius:  @radius; }
+
+// Transition: Use Set-Transit for Less 
+.transit { -webkit-backface-visibility:hidden; -webkit-transition: all .2s; -moz-transition: all .2s; -o-transition: all .2s; -ms-transition: all .2s; transition: all .2s;}
+.set-transit (@setspeed: .5s) { -webkit-transition:@setspeed; -moz-transition:@setspeed; -o-transition:@setspeed; -ms-transition:@setspeed; transition:@setspeed;}
+
+// Transform: 3D
+.transform3d (@x:0, @y:0, @z:0) { -webkit-transform: translate3d(@x, @y, @z); -moz-transform: translate3d(@x, @y, @z); -ms-transform: translate3d(@x, @y, @z); -o-transform: translate3d(@x, @y, @z); transform: translate3d(@x, @y, @z);
+}
+
+// Transform: Scale 1.0 
+.trans-scale (@baseScale) { -webkit-transform: scale(@baseScale); -moz-transform: scale(@baseScale); -ms-transform: scale(@baseScale); -o-transform: scale(@baseScale);
+}
+
+// Transform: Rotate 0deg
+.rotate (@deg:0deg) { -webkit-transform: rotate(@deg); -moz-transform: rotate(@deg); -ms-transform: rotate(@deg); -o-transform: rotate(@deg);
+}
+
+// Ease In Out
+.easeInout { -webkit-transition-timing-function: ease-in-out; -moz-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out;
+}
+
+// Delay Transition: .5s
+.delay (@delay: .5s) { -webkit-transition-delay: @delay; -moz-transition-delay: @delay; -o-transition-delay: @delay; transition-delay: @delay;}
+
+// Gradients
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+/* Image Saturation */
+
+// Desaturate
+.desaturate, img.desaturate {
+	// filter: grayscale(100%);
+	// -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%);
+	// -ms-filter: grayscale(100%); -o-filter: grayscale(100%);
+	// filter: url(#greyscale);
+	// filter: gray;
+	// -webkit-filter: grayscale(1);
+	.transit;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden; /* Fix for transition flickering */	
+}
+
+// Saturate
+.saturate, img.saturate {
+	// filter: grayscale(0%);
+	// -webkit-filter: grayscale(0%); -moz-filter: grayscale(0%);
+	// -ms-filter: grayscale(0%); -o-filter: grayscale(0%);
+	// filter: url(#greyscale);
+	// filter: gray;
+	// -webkit-filter: grayscale(0);
+	.transit;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);		
+}
+
+
+// Waypoint FadeIn
+.content-fade { position: relative; overflow: hidden;
+	.fadeIn { opacity: 0; .set-transit(.5s);
+		&.fromLeft { .transform3d(-100px,0,0);}
+		&.fromRight { .transform3d(100px,0,0);}
+		&.fromTop { .transform3d(0,-100px,0);}
+		&.fromBottom { .transform3d(0,100px,0);}
+	}
+	.fadeIn.waypoint-fade { opacity: 1;
+		&.fromLeft, &.fromRight, &.fromTop, &.fromBottom { .transform3d;}
+	}
+}
+
+
+
+//////// Global Styles  //////// 
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+* { margin: 0; .open-sans;}
+html, body { font-size: 14px;} 
+.Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
+.header, .Page-Content, .footer { width: 100%; margin: 0 auto;}
+.push, .footer { clear: both; height: 100px; }
+
+// Typography
+a { .transit; &:hover { color: @grey; }}
+p, li { color: @darkgrey; .transit; small{ font-size: .7em;}}
+h1, h2, h3, h4, h5 { margin: 10px 0; .transit; .open-sans; font-weight: bold; }
+h1 {} 
+h2 {} 
+h3 {} 
+h4 {} 
+h5 {} 
+h6 {}
+
+
+//////// Template Styles  ////////
+
+header {
+	background: @white;
+	& .menu-toggle {
+		display: none;
+		-webkit-backface-visibility: hidden;
+		-webkit-transition: all .2s;
+		-moz-transition: all .2s;
+		-o-transition: all .2s;
+		-ms-transition: all .2s;
+		transition: all .2s;
+		padding: 1.65em 0.55em 1.65em 0;
+		float: right;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+section.menu-slideout { z-index: 99999999; position: fixed; width: 250px; top: 0;right: 0; height: 100%; background: rgba(255, 255, 255, 0.9); .transform3d(300px,0,0); .transit; -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3); -moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3); box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3);
+	&.show { .transform3d;}
+	.menu-toggle { display: block;
+		& img {
+			padding: 18px 0;
+			}
+	}
+}
+
+section.Page-Content {}
+footer {}
+
+
+
+
+
+//////// Page Styles ////////
+
+
+
+
+
+
+//////// Module Styles  ////////
+
+
+
+
+
+
+
+//////// Media Queries [START] ////////
+
+// Foundation [Large]
+@media only screen and (min-width: 1440px) {
+	html, body { font-size: 18px;}
+}
+
+// Foundation [Medium]
+@media only screen and (max-width: 1024px) {
+	html, body { font-size: 14px;}
+}
+
+// Responsive Menu
+@media only screen and (max-width: 880px) {
+	nav { 
+		&.main-nav {display: none;}
+	}
+	header .menu-toggle { display: block;}
+}
+
+// Foundation [Small]
+@media only screen and (max-width: 640px) {
+	html, body { font-size: 12px;}
+	.text-word-col { -moz-column-count: 1; -webkit-column-count: 1; column-count: 1;}
+}
+
+/////////////////////////////////////
+
+// iPads (Portrait and Landscape)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
+
+// iPads (Portrait)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : portrait) {}
+
+// iPads (Landscape)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : landscape) {}
+
+/////////////////////////////////////
+
+// iPhones (Portrait and Landscape)
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {}
+
+// iPhones (Portrait)
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) 
+and (orientation: portrait) {}
+
+// iPhones (Landscape)
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) 
+and (orientation: landscape) {
+	.Wrap { background: @lightgrey;}
+}
+
+//////// Media Queries [END] ////////

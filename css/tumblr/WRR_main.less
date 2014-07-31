@@ -1,0 +1,263 @@
+/*
+Description: Tumblr Stylesheet
+Author: Gunther Koo
+*/	
+
+//////// PreDefined Elements + Mixins [START] ////////
+
+// Define Primary Fonts
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+.open-sans {font-family: 'Open Sans', sans-serif;}
+
+// Define Primary Colors
+@white: white; 
+@verylightgrey: #e5e5e5;
+@lightgrey: #9d9fa2; 
+@grey: #666; 
+@darkgrey: #414042; 
+@orange: #f36a00; 
+@red: #ec3814; 
+@limegreen: #8dc63f;
+
+/*Background Colors*/
+.bg-white { background-color: @white; }
+.bg-verylightgrey { background-color: @verylightgrey; }
+.bg-lightgrey { background-color: @lightgrey; }
+.bg-grey { background-color: @grey; }
+.bg-darkgrey { background-color: @darkgrey; }
+.bg-red { background-color: @red; }
+.bg-orange { background-color: @orange; }
+.bg-limegreen { background-color: @limegreen; }
+
+/*Text Colors*/
+.text-white { color: @white; }
+.text-verylightgrey { color: @verylightgrey; }
+.text-lightgrey { color: @lightgrey; }
+.text-grey { color: @grey; }
+.text-darkgrey { color: @darkgrey; }
+.text-red { color: @red; }
+.text-orange { color: @orange; }
+.text-limegreen { color: @limegreen; }
+
+/*Text Enhance*/
+.text-cap { text-transform: uppercase;}
+.text-underline { text-decoration: underline;}
+.text-dashed { border-bottom: 1px dashed;}
+.text-word-col { -moz-column-count: 2; -webkit-column-count: 2; column-count: 2;}
+
+// Force Full Width
+.Full-Width { max-width: 100% !important; width: 100% !important; }
+
+.no-margin { margin: 0; }
+.padding { width: 100%; margin-bottom: 4em; }
+.content-padding { padding: 3em 0;}
+
+// Animation Flicker Fix
+.backface { -webkit-backface-visibility:hidden;}
+// Device Render Animation
+.device-render { -webkit-transform: translateZ(0);}
+// Device Touch
+.fix-touch { -webkit-touch-callout: none; -webkit-user-select: none; }
+
+// Absolute Centering
+.abs-centered { overflow: auto; margin: auto !important; position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0; }
+
+// Rounded Corners
+.rounded-corners (@radius: 5px){ -webkit-border-radius: @radius; -moz-border-radius: @radius; border-radius:  @radius; }
+
+// Transition: Use Set-Transit for Less 
+.transit { -webkit-backface-visibility:hidden; -webkit-transition: all .2s; -moz-transition: all .2s; -o-transition: all .2s; -ms-transition: all .2s; transition: all .2s;}
+.set-transit (@setspeed: .5s) { -webkit-transition:@setspeed; -moz-transition:@setspeed; -o-transition:@setspeed; -ms-transition:@setspeed; transition:@setspeed;}
+
+// Transform: 3D
+.transform3d (@x:0, @y:0, @z:0) { -webkit-transform: translate3d(@x, @y, @z); -moz-transform: translate3d(@x, @y, @z); -ms-transform: translate3d(@x, @y, @z); -o-transform: translate3d(@x, @y, @z); transform: translate3d(@x, @y, @z);
+}
+
+// Transform: Scale 1.0 
+.trans-scale (@baseScale) { -webkit-transform: scale(@baseScale); -moz-transform: scale(@baseScale); -ms-transform: scale(@baseScale); -o-transform: scale(@baseScale);
+}
+
+// Transform: Rotate 0deg
+.rotate (@deg:0deg) { -webkit-transform: rotate(@deg); -moz-transform: rotate(@deg); -ms-transform: rotate(@deg); -o-transform: rotate(@deg);
+}
+
+// Ease In Out
+.easeInout { -webkit-transition-timing-function: ease-in-out; -moz-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out; transition-timing-function: ease-in-out;
+}
+
+// Delay Transition: .5s
+.delay (@delay: .5s) { -webkit-transition-delay: @delay; -moz-transition-delay: @delay; -o-transition-delay: @delay; transition-delay: @delay;}
+
+// Gradients
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+// Waypoint FadeIn
+.content-fade { position: relative; overflow: hidden;
+	.fadeIn { opacity: 0; .set-transit(.5s);
+		&.fromLeft { .transform3d(-100px,0,0);}
+		&.fromRight { .transform3d(100px,0,0);}
+		&.fromTop { .transform3d(0,-100px,0);}
+		&.fromBottom { .transform3d(0,100px,0);}
+	}
+	.fadeIn.waypoint-fade { opacity: 1;
+		&.fromLeft, &.fromRight, &.fromTop, &.fromBottom { .transform3d;}
+	}
+}
+
+//////// PreDefined Elements + Mixins [END] ////////
+
+
+//////// Global Styles [START] //////// 
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+* { margin: 0; .open-sans;}
+html, body { font-size: 14px;} 
+.Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
+.header, .Page-Content, .footer { max-width: 960px; width: 100%; margin: 0 auto;}
+.push, .footer { clear: both; height: 100px; }
+
+header.header {}
+section.Page-Content {}
+footer.footer {}
+
+// Typography Styling
+a { .transit; &:hover { color: @grey; }}
+p, li { color: @darkgrey; .transit; small{ font-size: .7em;}}
+h1, h2, h3, h4, h5 { margin: 10px 0; .transit; .open-sans; font-weight: bold; }
+h1 {} 
+h2 {} 
+h3 {} 
+h4 {} 
+h5 {} 
+h6 {}
+
+//////// Global Styles [END] //////// 
+
+
+
+//////// Tumblr Styles [START] ////////
+ul.posts {
+	li.post-wrap { padding: 0 0.625rem 2.5rem;
+		.icon { height: 4em; width: 4em; margin: 0 auto; text-align: center; .rounded-corners; .transit; background: @limegreen;
+			i { font-size: 2.3em; color: #414141;}
+		}
+	}
+	span.date-year { font-size: 1.4em;}
+	.post {
+		&.video .video { position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden; 
+			> iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+		}
+		img, iframe, object, embed { max-width: 100%;}
+		&.photo, &.photoset {
+			a:hover img { opacity: .7;}
+			img { margin-bottom: 15px; width: 100%; .transit; border: 5px solid @verylightgrey; .rounded-corners;}
+			.photoset-row { margin-bottom: 10px !important;}
+		}
+		&.quote { padding: 1em 1.5em; font-size: 1.3em; font-weight: 100; font-style: italic; border-left: .3em solid @limegreen; line-height: 1.8em;
+			.source { font-size: .6em; font-style: normal; font-weight: 500; margin-top: .7em; 
+				&:before { content: "- ";}
+			}
+		}
+		&.link {
+			a.link { font-size: 1.5em; font-weight: 100; font-style: italic; display: block; position: relative; background: @verylightgrey; padding: .3em 1.9em .3em .8em; border-left: 0em solid @limegreen; border-bottom: .15em solid; margin-bottom: .5em; .transit; overflow: hidden; .rounded-corners;
+				&:hover { border-left: .3em solid @limegreen;}
+				&:hover span.link-out { right: .3em;}
+				span.link-out { position: absolute; right: -45px; .transit;}
+			}
+		}
+		.post-title { margin-top: 0;}
+	}
+	p.post-tags {
+		a { padding: .5rem; background: @verylightgrey; .rounded-corners; .transit; margin-right: .5rem;
+			// &:before { content: ", ";}
+			// &:first-child:before { content: "";}
+			&:hover { background: @limegreen; color: @white;}
+		}
+	}
+}
+	
+ul.social-controls { margin-bottom: 0 !important;
+	li { padding-bottom: 0;
+		&:first-child { padding-bottom: 1px;}
+		&.share-control {
+			ul.inline-list { margin-bottom: 0 !important;
+				li {
+					a.share-item {
+						i:before { .transform3d; .transit;}
+						&:hover i:before { .transform3d(0,-.3em,0);}
+					}
+				}
+			}
+		}
+	}
+}
+.reblog_button, .like_button { display: block; width: 20px; height: 20px; margin: 0 auto; .transit; .transform3d;
+	&:hover { .transform3d(5px,0,0);}
+}
+
+
+
+//////// Tumblr Styles [END] ////////
+
+
+
+//////// Media Queries [START] ////////
+
+// Foundation [Large]
+@media only screen and (min-width: 1440px) {
+	html, body { font-size: 18px;}
+}
+
+// Foundation [Medium]
+@media only screen and (max-width: 1024px) {
+	html, body { font-size: 14px;}
+}
+
+// Foundation [Small]
+@media only screen and (max-width: 640px) {
+	html, body { font-size: 12px;}
+	.text-word-col { -moz-column-count: 1; -webkit-column-count: 1; column-count: 1;}
+}
+
+/////////////////////////////////////
+
+// iPads (Portrait and Landscape)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
+
+// iPads (Portrait)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : portrait) {}
+
+// iPads (Landscape)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) 
+and (orientation : landscape) {}
+
+/////////////////////////////////////
+
+// iPhones (Portrait and Landscape)
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {}
+
+// iPhones (Portrait)
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) 
+and (orientation: portrait) {
+	html, body { font-size: 11px;}
+	.inline-list>li { margin-left: 1.175rem;}
+}
+
+// iPhones (Landscape)
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) 
+and (orientation: landscape) {}
+
+//////// Media Queries [END] ////////

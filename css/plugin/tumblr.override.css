@@ -1,0 +1,21 @@
+/*
+Description: Template Stylesheet
+Author: Gunther Koo
+*/	
+
+/* //////////////////////////////////////////////// */
+/*Tumblr Stylesheet Override*/
+/* //////////////////////////////////////////////// */
+
+#posts { margin: 0; }
+.post-footer { height: auto; }
+.post-footer ul { margin: 0; }
+.post-controls { vertical-align: none; padding-top: 3px; }
+.photo-wrapper a:hover { border: 0;}
+.photo-wrapper img { opacity: 0.7;} 
+.photo-wrapper img:hover { opacity: 1;}
+article.not-page footer.post-footer, article.not-page span.post-footer, article.not-page section.disqus { display: none; }
+article.active.exposed footer.post-footer, article.active.exposed span.post-footer, article.active.exposed section.disqus { display: block; }
+
+nav.pop:hover .pop-menu { display: block;}
+.pop-menu ul li a:hover { border: 0;}
