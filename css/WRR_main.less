@@ -1,48 +1,77 @@
 /*
-Description: Template Stylesheet 
-Author: Wasabi Rabbit
+Description: Wasabi Rabbit
+Author: CWilliams - 2014.08
 */	
 
 //////// PreDefined Elements + Mixins [START] ////////
 
 
-
+.row {
+	padding-right: .25em;
+	padding-left: .25em;
+}
 .column, .columns {
-padding-left: 0.5em;
-padding-right: 0.5em;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
 }
 
 
 // Define Primary Fonts
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,700);
-.open-sans {font-family: 'Open Sans', sans-serif;}
 
-// Define Primary Colors
+
+/* Color Definitions */
+
+// Global Colors [Master]
 @white: white; 
-@lightgrey: #9d9fa2; 
-@grey: #666; 
-@darkgrey: #414042; 
-@orange: #f36a00; 
-@red: #ec3814; 
-@limegreen: #8dc63f;
+@black: #000000;
+@dkbrown: #313029;
+@brown: #3C3731;
+@ltbrown: #655B51;
+@dkgrey: #E2DBD3;
+@grey: #F0ECE5;  
+@ltgrey: #F2F1EB;
+@dkorange: #F79451;
+@orange: #F9AA64;
+@ltorange: #FAB97C;
 
-/*Background Colors*/
+// Custom Colors 
+@mwblue: #0470B5;
+@amblue: #2B78A7;
+
+
+/* Background Colors */
+
+// Primary
 .bg-white { background-color: @white; }
-.bg-lightgrey { background-color: @lightgrey; }
+.bg-black { background-color: @black; }
+.bg-dkbrown { background-color: @dkbrown; }
+.bg-brown { background-color: @brown; }
+.bg-ltbrown { background-color: @ltbrown; }
+.bg-dkgrey { background-color: @dkgrey; }
 .bg-grey { background-color: @grey; }
-.bg-darkgrey { background-color: @darkgrey; }
-.bg-red { background-color: @red; }
+.bg-ltgrey { background-color: @ltgrey; }
+.bg-dkorange { background-color: @dkorange; }
 .bg-orange { background-color: @orange; }
-.bg-limegreen { background-color: @limegreen; }
+.bg-ltorange { background-color: @ltorange; }
+
+// Custom
+.bg-mwblue {background-color: @mwblue;}
+.bg-amblue {background-color: @amblue;}
+
 
 /*Text Colors*/
 .text-white { color: @white; }
-.text-lightgrey { color: @lightgrey; }
+.text-black { color: @black; }
+.text-dkbrown { color: @dkbrown; }
+.text-brown { color: @brown; }
+.text-ltbrown { color: @ltbrown; }
+.text-dkgrey { color: @dkgrey; }
 .text-grey { color: @grey; }
-.text-darkgrey { color: @darkgrey; }
-.text-red { color: @red; }
+.text-ltgrey { color: @ltgrey; }
+.text-dkorange { color: @dkorange; }
 .text-orange { color: @orange; }
-.text-limegreen { color: @limegreen; }
+.text-ltorange { color: @ltorange; }
+
 
 /* Visibility */
 .hide, .Hide, .d-n {
@@ -169,7 +198,7 @@ padding-right: 0.5em;
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-* { margin: 0; .open-sans;}
+* { margin: 0; }
 html, body { font-size: 14px;} 
 .Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
 .header, .Page-Content, .footer { width: 100%; margin: 0 auto;}
@@ -177,8 +206,8 @@ html, body { font-size: 14px;}
 
 // Typography
 a { .transit; &:hover { color: @grey; }}
-p, li { color: @darkgrey; .transit; small{ font-size: .7em;}}
-h1, h2, h3, h4, h5 { margin: 10px 0; .transit; .open-sans; font-weight: bold; }
+p, li { color: @dkgrey; .transit; small{ font-size: .7em;}}
+h1, h2, h3, h4, h5 { margin: 10px 0; .transit;  font-weight: bold; }
 h1 {} 
 h2 {} 
 h3 {} 
@@ -190,7 +219,16 @@ h6 {}
 //////// Template Styles  ////////
 
 header {
-	background: @white;
+	background-color: rgba(255, 255, 255, .8);
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 65px;
+	& .Logo {
+		width: 50px;
+		display: block;
+		margin: 18px;
+	}
 	& .menu-toggle {
 		display: none;
 		-webkit-backface-visibility: hidden;
@@ -199,7 +237,7 @@ header {
 		-o-transition: all .2s;
 		-ms-transition: all .2s;
 		transition: all .2s;
-		padding: 1.65em 0.55em 1.65em 0;
+		padding: 24px 18px 0 0;
 		float: right;
 		&:hover {
 			cursor: pointer;
@@ -207,7 +245,20 @@ header {
 	}
 }
 
-section.menu-slideout { z-index: 99999999; position: fixed; width: 250px; top: 0;right: 0; height: 100%; background: rgba(255, 255, 255, 0.9); .transform3d(300px,0,0); .transit; -webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3); -moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3); box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3);
+section.menu-slideout { 
+	z-index: 99999999; 
+	position: fixed; 
+	width: 250px; 
+	top: 0; 
+	right: 0; 
+	height: 100%; 
+	overflow: scroll;
+	background: rgba(255, 255, 255, 0.9); 
+	.transform3d(300px,0,0); 
+	.transit; 
+	-webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3); 
+	-moz-box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3); 
+	box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.3);
 	&.show { .transform3d;}
 	.menu-toggle { display: block;
 		& img {
@@ -216,7 +267,9 @@ section.menu-slideout { z-index: 99999999; position: fixed; width: 250px; top: 0
 	}
 }
 
-section.Page-Content {}
+section.Page-Content {
+	padding-top: 65px;
+}
 footer {}
 
 
@@ -289,7 +342,7 @@ and (orientation: portrait) {}
 // iPhones (Landscape)
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) 
 and (orientation: landscape) {
-	.Wrap { background: @lightgrey;}
+	.Wrap {}
 }
 
 //////// Media Queries [END] ////////
