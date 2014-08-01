@@ -22,6 +22,7 @@ Author: CWilliams - 2014.08
 /* Color Definitions */
 
 // Global Colors [Master]
+@copy: #3D3731;
 @white: white; 
 @black: #000000;
 @dkbrown: #313029;
@@ -35,6 +36,7 @@ Author: CWilliams - 2014.08
 @ltorange: #FAB97C;
 
 // Custom Colors 
+@twblue: #27A9E1;
 @mwblue: #0470B5;
 @amblue: #2B78A7;
 
@@ -57,9 +59,9 @@ Author: CWilliams - 2014.08
 // Custom
 .bg-mwblue {background-color: @mwblue;}
 .bg-amblue {background-color: @amblue;}
+.bg-twblue { background-color: @twblue; }
 
-
-/*Text Colors*/
+/* Text Colors */
 .text-white { color: @white; }
 .text-black { color: @black; }
 .text-dkbrown { color: @dkbrown; }
@@ -71,6 +73,20 @@ Author: CWilliams - 2014.08
 .text-dkorange { color: @dkorange; }
 .text-orange { color: @orange; }
 .text-ltorange { color: @ltorange; }
+.text-twblue { color: @twblue; }
+
+/* Borders */
+.bord-white { border: solid 10px @white;}
+.bord-black { border: solid 10px @black;}
+.bord-dkbrown { border: solid 10px @dkbrown;}
+.bord-brown { border: solid 10px @brown;}
+.bord-ltbrown { border: solid 10px @ltbrown;}
+.bord-dkgrey { border: solid 10px @dkgrey;}
+.bord-grey { border: solid 10px @grey;}
+.bord-ltgrey { border: solid 10px @ltgrey;}
+.bord-dkorange { border: solid 10px @dkorange;}
+.bord-orange { border: solid 10px @orange;}
+.bord-ltorange { border: solid 10px @ltorange;}
 
 
 /* Visibility */
@@ -199,17 +215,19 @@ Author: CWilliams - 2014.08
 .clearfix { zoom: 1; }
 
 * { margin: 0; }
-html, body { font-size: 14px;} 
+html, body { font-size: 14px; color: @copy;} 
 .Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
 .header, .Page-Content, .footer { width: 100%; margin: 0 auto;}
 .push, .footer { clear: both; height: 100px; }
 
 // Typography
 a { .transit; &:hover { color: @grey; }}
-p, li { color: @dkgrey; .transit; small{ font-size: .7em;}}
+p, li { color: @copy; .transit; small{ font-size: .7em;}}
 h1, h2, h3, h4, h5 { margin: 10px 0; .transit;  font-weight: bold; }
 h1 {} 
-h2 {} 
+h2 {
+	font-size: 1.5em;
+} 
 h3 {} 
 h4 {} 
 h5 {} 
