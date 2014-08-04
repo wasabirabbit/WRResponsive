@@ -16,8 +16,6 @@ Author: CWilliams - 2014.08
 }
 
 
-// Define Primary Fonts
-
 
 /* Color Definitions */
 
@@ -87,6 +85,13 @@ Author: CWilliams - 2014.08
 .bord-dkorange { border: solid 10px @dkorange;}
 .bord-orange { border: solid 10px @orange;}
 .bord-ltorange { border: solid 10px @ltorange;}
+
+
+/* Font Definitions */
+.neutraItalic { font-family: 'neutraface_2_textbook_italic', Helvetica, Arial, 'sans-serif';}
+.neutraDemi { font-family: 'neutraface_2_textdemi', Helvetica, Arial, 'sans-serif';}
+.neutraLight { font-family: 'neutraface_2_textlight', Helvetica, Arial, 'sans-serif';}
+.neutraBook { font-family: 'neutraface_2_textbook', Helvetica, Arial, 'sans-serif';}
 
 
 /* Visibility */
@@ -214,7 +219,7 @@ Author: CWilliams - 2014.08
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-* { margin: 0; }
+* { margin: 0; .neutraDemi;}
 html, body { font-size: 14px; color: @copy;} 
 .Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
 .header, .Page-Content, .footer { width: 100%; margin: 0 auto;}
@@ -223,7 +228,7 @@ html, body { font-size: 14px; color: @copy;}
 // Typography
 a { .transit; &:hover { color: @grey; }}
 p, li { color: @copy; .transit; small{ font-size: .7em;}}
-h1, h2, h3, h4, h5 { margin: 10px 0; .transit;  font-weight: normal; }
+h1, h2, h3, h4, h5 { margin: 10px 0; .transit;  font-weight: normal; .neutraBook;}
 h1 {} 
 h2 {
 	font-size: 1.5em;
