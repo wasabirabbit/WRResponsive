@@ -220,19 +220,21 @@ Author: CWilliams - 2014.08
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-* { margin: 0; .copernicusBook;}
+* { margin: 0; .copernicusBook; text-rendering: inherit;}
 html, body { font-size: 14px; color: @copy;} 
 .Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
 .header, .Page-Content, .footer { width: 100%; margin: 0 auto;}
 .push, .footer { clear: both; height: 100px; }
 
 // Typography
-a { .transit; &:hover { color: @grey; }}
+// a { .transit; &:hover { color: @grey; }}
 p, li { color: @copy; .transit; small{ font-size: .7em;}}
 h1, h2, h3, h4, h5 { margin: 10px 0; .transit;  font-weight: normal; .neutraBook;}
 h1 {} 
 h2 {
 	font-size: 1.5em;
+	text-transform: uppercase;
+	.neutraLight;
 } 
 h3 {} 
 h4 {} 
@@ -269,6 +271,35 @@ header {
 	}
 }
 
+nav.Main_nav {
+	ul {
+		list-style: none;
+		float: right;
+		margin: 0;
+		line-height: inherit;
+		li {
+			display: block;
+			display:inline-block;
+    		*display:inline;
+			a {
+				display: block;
+				padding: 24px 12px;
+				color: @ltbrown;
+				.neutraBook;
+				line-height: inherit;
+			}
+			&:hover a {
+				color: @dkbrown;
+			}
+			ul {
+				display: none;
+				li {
+					a {}
+				}
+			}
+		}
+	}
+}
 section.menu-slideout { 
 	z-index: 99999999; 
 	position: fixed; 
@@ -294,7 +325,33 @@ section.menu-slideout {
 section.Page-Content {
 	padding-top: 65px;
 }
-footer {}
+
+footer {
+	& section.expandable {
+		& .bloks {
+			margin-bottom: 0;
+		}
+		& svg.WRSVGTag {
+			width: 315px;
+			top: 0;
+			position: absolute;
+			right: 0;
+			padding: 30px 25px 30px;			
+		}
+	}
+	& section.veteran {
+		& .bloks {
+			.nomargin;
+		}
+		& svg.vetrepreneur {
+			width: 350px;
+			top: 0;
+			position: absolute;
+			right: 0;
+			padding: 25px;
+		}
+	}
+}
 
 
 
