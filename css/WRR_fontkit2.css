@@ -1,0 +1,109 @@
+-
+@font-face {
+    font-family: 'neutraface_2_textbook_italic';
+    src: url('../src/fonts/font-kit/neutra2text-bookitalic-webfont.eot');
+    src: url('../src/fonts/font-kit/neutra2text-bookitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/neutra2text-bookitalic-webfont.woff') format('woff'),
+         url('../src/fonts/font-kit/neutra2text-bookitalic-webfont.ttf') format('truetype'),
+         url('../src/fonts/font-kit/neutra2text-bookitalic-webfont.svg#neutraface_2_textbook_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*START*/
+
+@font-face {
+    font-family: 'copernicus_bold';
+    src: url('../src/fonts/font-kit/Copernicus-Bold.eot');
+    src: url('../src/fonts/font-kit/Copernicus-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-Bold.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-Bold.svg#Copernicus-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'copernicus_bold_italic';
+    src: url('../src/fonts/font-kit/Copernicus-BoldItalic.eot');
+    src: url('../src/fonts/font-kit/Copernicus-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-BoldItalic.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-BoldItalic.svg#copernicus_bold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'copernicus_book';
+    src: url('../src/fonts/font-kit/Copernicus-Book.eot');
+    src: url('../src/fonts/font-kit/Copernicus-Book.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-Book.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-Book.svg#copernicus_book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'copernicus_book_italic';
+    src: url('../src/fonts/font-kit/Copernicus-BookItalic.eot');
+    src: url('../src/fonts/font-kit/Copernicus-BookItalic.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-BookItalic.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-BookItalic.svg#copernicus_book_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'copernicus_extrabold';
+    src: url('../src/fonts/font-kit/Copernicus-Extrabold.eot');
+    src: url('../src/fonts/font-kit/Copernicus-Extrabold.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-Extrabold.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-Extrabold.svg#copernicus_extrabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'copernicus_extrabold_italic';
+    src: url('../src/fonts/font-kit/Copernicus-ExtraboldItalic.eot');
+    src: url('../src/fonts/font-kit/Copernicus-ExtraboldItalic.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-ExtraboldItalic.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-ExtraboldItalic.svg#copernicus_extrabold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'copernicus_heavy';
+    src: url('../src/fonts/font-kit/Copernicus-Heavy.eot');
+    src: url('../src/fonts/font-kit/Copernicus-Heavy.eot?#iefix') format('embedded-opentype'),
+         url('../src/fonts/font-kit/Copernicus-Heavy.woff') format('woff'),
+         url('../src/fonts/font-kit/Copernicus-Heavy.svg#copernicus_heavy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+copernicus_bold
+
+copernicus_bold_italic
+
+copernicus_book
+
+copernicus_book_italic
+
+copernicus_extrabold
+
+copernicus_extrabold_italic
+
+copernicus_heavy
+
+copernicus_heavy_italic
+
+copernicus_medium
+
+copernicus_medium_italic
+
+copernicus_semibold
+
+copernicus_semibold_italic
