@@ -369,7 +369,16 @@ footer {
 
 //////// Module Styles  ////////
 
-
+.bloks {
+	&.bgimg {
+		background-repeat: no-repeat; 
+		background-position: bottom right; 
+		background-size: contain;
+		&.cover {
+			background-size: cover;
+		}
+	}
+}
 
 
 
@@ -399,6 +408,9 @@ footer {
 @media only screen and (max-width: 640px) {
 	html, body { font-size: 12px;}
 	.text-word-col { -moz-column-count: 1; -webkit-column-count: 1; column-count: 1;}
+	h2.large-for-small {
+		font-size: 2.75em;
+	}
 }
 
 /////////////////////////////////////
