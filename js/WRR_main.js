@@ -86,6 +86,23 @@ $('nav.slideout li a').click(function () {
     $('section.menu-slideout').removeClass('show');
 });
 
+
+// Instagram Embed
+ var feed = new Instafeed({
+        get: 'user',
+        userId: 418313457,
+        accessToken: '418313457.467ede5.2657d1b3985f4fa7b3dd2fb8d5eb5e9e',
+        template: '<a target="_blank" href="{{link}}" class="sml-2 med-4 bloks bg-brown bord-ltbrown" style="background-image: url(https:{{image}}); background-repeat: no-repeat; background-size: cover;"></a>',
+        sortBy: 'most-recent',
+        limit: 1,
+        resolution: 'standard_resolution'
+    });
+    feed.run();
+
+
+// $('.flexslider').flexslider();
+
+
 // A Menu Slide Function?
 // $('span.menuBtn').click(
 // 	function(){
@@ -95,7 +112,7 @@ $('nav.slideout li a').click(function () {
 
 
 // Page Load Delay Animation
-$('.delay-ani').addClass('delayed');
+// $('.delay-ani').addClass('delayed');
 
 // Waypoint Plugin 
 // $('.Wrap').waypoint(function(direction) {
