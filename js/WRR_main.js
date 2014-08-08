@@ -109,6 +109,7 @@ $.getJSON('http://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_
   var firstPostBody = data[0].body;
 
 var tumblrPostRender = "<h4>" + firstPostitle + "</h4> <p>" + firstPostBody + "</p>";
+
 console.log(tumblrPostRender);
 
 $('#tumblrEmbed').html(tumblrPostRender);
