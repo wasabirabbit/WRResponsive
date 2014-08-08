@@ -100,6 +100,24 @@ $('nav.slideout li a').click(function () {
     feed.run();
 
 
+// Tumblr Embed
+
+$.getJSON('http://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_key=SvHJfK7cqajTBtNR9zxEzj228nMs22JZWOlkhUQUvjYnmZkJv9', function(data) {
+  var data = data.posts;
+  var firstPostTitle = data[0].title;
+  var firstPostUrl = data[0].post_url;
+  var firstPostBody = data[0].body;
+
+var tumblrPostRender = "<h4>" + firstPostitle + "</h4> <p>" + firstPostBody + "</p>";
+console.log(tumblrPostRender);
+
+$('#tumblrEmbed').html(tumblrPostRender);
+
+});
+
+
+
+
 // $('.flexslider').flexslider();
 
 
