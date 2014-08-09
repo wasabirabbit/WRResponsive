@@ -102,7 +102,7 @@ $('nav.slideout li a').click(function () {
 
 // Tumblr Embed
 
-$.getJSON('http://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_key=SvHJfK7cqajTBtNR9zxEzj228nMs22JZWOlkhUQUvjYnmZkJv9', function(data) {
+$.getJSON('https://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_key=hNuVJfalwd0jR3PLmvLyXECB3A8b9eGPA2IqXoRE86sxfFtfbB?callback=?', function(data) {
   var data = data.posts;
   var firstPostTitle = data[0].title;
   var firstPostUrl = data[0].post_url;
@@ -115,6 +115,29 @@ console.log(tumblrPostRender);
 $('#tumblrEmbed').html(tumblrPostRender);
 
 });
+
+
+
+$.ajax({
+    url: "http://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_key=Srhk9qkcJO69pAoB4ltM5uIqpwUBO7kgDqDEaCD9Jo8EafWyHE",
+    dataType: 'jsonp',
+    success: function(data){
+        posts = data.response.posts
+        
+		var firstPostTitle = posts[0].title;
+		var firstPostUrl = posts[0].post_url;
+		var firstPostBody = posts[0].body;
+
+		var tumblrPostRender = "<h4>" + firstPostitle + "</h4> <p>" + firstPostBody + "</p>";
+
+		console.log(tumblrPostRender);        
+
+    }
+});
+
+
+
+
 
 
 
