@@ -20,11 +20,14 @@
 	margin-bottom: 0.25em;
 	display: block;
 	overflow: hidden;
+    padding: 35px;
+    & .bottom {
+        bottom: 0;
+        position: absolute;
+        margin: 0 35px 45px 0;
+    }
 }
 
-.bloks {
-	padding: 35px;
-}
 
 .row .row {
 	margin-left: auto;
@@ -36,6 +39,11 @@
 @media only screen and (max-width: 40em) {
     .bloks {
         padding: 15px;
+        & .bottom {
+            bottom: 0;
+            position: absolute;
+            margin: 0 15px 15px 0;
+        }
     }
     .sml {
     }
