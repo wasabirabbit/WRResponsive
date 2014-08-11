@@ -102,22 +102,6 @@ $('nav.slideout li a').click(function () {
 
 // Tumblr Embed
 
-$.getJSON('https://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_key=hNuVJfalwd0jR3PLmvLyXECB3A8b9eGPA2IqXoRE86sxfFtfbB?callback=?', function(data) {
-  var data = data.posts;
-  var firstPostTitle = data[0].title;
-  var firstPostUrl = data[0].post_url;
-  var firstPostBody = data[0].body;
-
-var tumblrPostRender = "<h4>" + firstPostitle + "</h4> <p>" + firstPostBody + "</p>";
-
-console.log(tumblrPostRender);
-
-$('#tumblrEmbed').html(tumblrPostRender);
-
-});
-
-
-
 $.ajax({
     url: "http://api.tumblr.com/v2/blog/wasabirabbit.tumblr.com/posts/text?api_key=Srhk9qkcJO69pAoB4ltM5uIqpwUBO7kgDqDEaCD9Jo8EafWyHE",
     dataType: 'jsonp',
@@ -128,7 +112,8 @@ $.ajax({
 		var firstPostUrl = posts[0].post_url;
 		var firstPostBody = posts[0].body;
 
-		var tumblrPostRender = "<h4>" + firstPostitle + "</h4> <p>" + firstPostBody + "</p>";
+		var tumblrPostRender = "<a href=\"" + posts[0].post_url + "\" target=\"_blank\" class=\"sml-4 med-4 bloks bg-white bord-orange\">" + "<h4>" + posts[0].title + "</h4> " + firstPostBody + "</a>";
+$('#tumblrEmbed').html(tumblrPostRender);
 
 		console.log(tumblrPostRender);        
 
