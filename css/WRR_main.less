@@ -237,7 +237,7 @@ Author: CWilliams - 2014.08
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-* { margin: 0; .copernicusBook; text-rendering: inherit;}
+* { margin: 0; .copernicusBook; text-rendering: geometricprecision;}
 html, body { font-size: 14px; color: @copy;} 
 .Wrap { width: 100%; min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -100px;}
 .header, .Page-Content, .footer { width: 100%; margin: 0 auto;}
@@ -405,6 +405,16 @@ footer {
 	}
 }
 
+
+.bloks {
+	& .bottom {
+		bottom: 0;
+		position: absolute;
+		margin: 0 35px 45px 0;
+	}
+}
+
+
 // .bloks {
 // 	.transit;
 // 	span {
@@ -416,6 +426,10 @@ footer {
 // 		}
 // 	}
 // }
+
+
+
+
 //////// Media Queries [START] ////////
 
 // Foundation [Large]
