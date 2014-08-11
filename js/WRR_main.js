@@ -1,7 +1,7 @@
 
 /*
-Description: Foundation
-Author: Foundation 
+Description: WR Responsive
+Author: Wasabi x CWilliams
 */	
 
 var $ = jQuery.noConflict();
@@ -107,15 +107,22 @@ $.ajax({
     dataType: 'jsonp',
     success: function(data){
         posts = data.response.posts
-        
+		
+		// Set Vars for URL, Title, & Body
 		var firstPostTitle = posts[0].title;
 		var firstPostUrl = posts[0].post_url;
 		var firstPostBody = posts[0].body;
+		
+		// Push the Values to the Page
+		$('#tumblrEmbed .title').text(firstPostTitle);
+		$('#tumblrEmbed > a').attr('href',firstPostUrl);
+		$('#tumblrEmbed .body').html(firstPostBody);
 
-		var tumblrPostRender = "<a href=\"" + posts[0].post_url + "\" target=\"_blank\" class=\"sml-4 med-4 bloks bg-white bord-orange\">" + "<h4>" + posts[0].title + "</h4> " + firstPostBody + "</a>";
-$('#tumblrEmbed').html(tumblrPostRender);
+		// Clean Up the Rendered HTML
+ 		var bodyRefine = $("#tumblrEmbed .body").text().substr(0,120)+'...';
+ 		console.log(bodyRefine);
 
-		console.log(tumblrPostRender);        
+        $("#tumblrEmbed .body").text(bodyRefine);
 
     }
 });
