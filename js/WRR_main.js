@@ -92,7 +92,7 @@ $('nav.slideout li a').click(function () {
         get: 'user',
         userId: 418313457,
         accessToken: '418313457.467ede5.2657d1b3985f4fa7b3dd2fb8d5eb5e9e',
-        template: '<a target="_blank" href="{{link}}" class="sml-2 med-4 bloks bg-brown bord-ltbrown" style="background-image: url(https:{{image}}); background-repeat: no-repeat; background-size: cover;"></a>',
+        template: '<a target="_blank" href="{{link}}" class="sml-2 med-4 bloks bg-brown bord-ltbrown" style="background-image: url(https:{{image}}); background-repeat: no-repeat; background-size: cover;"><i class="icon-instagram larger text-ltbrown"></i></a>',
         sortBy: 'most-recent',
         limit: 1,
         resolution: 'standard_resolution'
