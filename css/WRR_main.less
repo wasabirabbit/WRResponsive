@@ -7,8 +7,8 @@ Author: CWilliams - 2014.08
 
 
 .row {
-	padding-right: .25em;
 	padding-left: .25em;
+	padding-right: .25em;
 }
 .column, .columns {
 	padding-left: 0.25em;
@@ -410,17 +410,20 @@ footer {
 
 #twitterfeed {
 	& a {
-		border-bottom: 1px dotted @dkgrey;
+		border-bottom: 1px solid @dkgrey;
 	}
 }
 
 
 .bloks {
 	.transit;
+	& i.icon-rarr {
+		
+	}
 	&:hover {
 		i.icon-rarr {
 			.transit;
-			padding-left: 3px;
+			padding-left: 10px;
 		}
 	}
 }
