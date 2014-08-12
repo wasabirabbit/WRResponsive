@@ -265,7 +265,7 @@ h6 {}
 //////// Template Styles  ////////
 
 header {
-	background-color: rgba(255, 255, 255, .8);
+	background-color: rgba(255, 255, 255, 1);
 	position: fixed;
 	z-index: 999;
 	width: 100%;
@@ -274,6 +274,7 @@ header {
 		width: 50px;
 		display: block;
 		margin: 18px;
+		float: left;
 	}
 	& .menu-toggle {
 		display: none;
@@ -292,6 +293,7 @@ header {
 }
 
 nav.Main_nav {
+	position: relative;
 	ul {
 		list-style: none;
 		float: right;
@@ -308,15 +310,31 @@ nav.Main_nav {
 				.neutraBook;
 				line-height: inherit;
 			}
-			&:hover a {
-				color: @dkbrown;
-			}
 			ul {
+				.transit;
+				position: absolute;
+				right: 0;
 				display: none;
+				background: @white;
+				width: 100%;
 				li {
-					a {}
+					float: left;
+					background: @white;
+					a {
+						color: @ltbrown;
+						display: block;
+					}
 				}
 			}
+			&:hover {
+				& a {
+					color: @dkbrown;
+				}
+				& ul {
+					.transit;
+					display: inline-block;
+				}
+			}			
 		}
 	}
 }
