@@ -294,11 +294,18 @@ header {
 	}
 }
 
-nav.Main_nav {
+.nav-container {
+	border-bottom: 1px solid black;
+display: block;
+height: 55px;
+z-index: 900;
+& nav.Main_nav {
 	width: 100%;
 	background: @white;
 	.transit;
 	overflow: hidden;
+	position: absolute;
+	z-index: 900;
 	&.active-hover {
 		height: 95px;
 		// padding-bottom: 95px;
@@ -309,11 +316,12 @@ nav.Main_nav {
 		float: right;
 		margin: 0;
 		line-height: inherit;
+		
 		li {
 			.transit;
-			display: block;
+
 			display:inline-block;
-    		*display:inline;
+
 			a {
 				.transit;
 				display: block;
@@ -353,6 +361,7 @@ nav.Main_nav {
 			}			
 		}
 	}
+}
 }
 section.menu-slideout { 
 	z-index: 99999999; 
