@@ -275,6 +275,7 @@ header {
 		width: 50px;
 		display: block;
 		margin: 18px;
+		margin-left: 35px;
 		float: left;
 		z-index: 999;
 	}
@@ -295,73 +296,70 @@ header {
 }
 
 .nav-container {
-	border-bottom: 1px solid black;
-display: block;
-height: 55px;
-z-index: 900;
-& nav.Main_nav {
-	width: 100%;
-	background: @white;
-	.transit;
-	overflow: hidden;
-	position: absolute;
-	z-index: 900;
-	&.active-hover {
-		height: 95px;
-		// padding-bottom: 95px;
-	}
-	ul {
+	
+	display: block;
+	height: 55px;
+	& nav.Main_nav {
+		width: 100%;
+		background: @white;
 		.transit;
-		list-style: none;
-		float: right;
-		margin: 0;
-		line-height: inherit;
-		
-		li {
+		overflow: hidden;
+		&.active-hover {
+			height: 95px;
+			// padding-bottom: 95px;
+		}
+		ul {
 			.transit;
-
-			display:inline-block;
-
-			a {
+			list-style: none;
+			float: right;
+			margin: 0;
+			line-height: inherit;
+			
+			li {
 				.transit;
-				display: block;
-				padding: 24px 12px;
-				color: @ltbrown;
-				.neutraBook;
-				line-height: inherit;
-			}
-			ul {
-				.transit;
-				position: absolute;
-				right: 0;
-				display: none;
-				background: @white;
-				li {
+
+				display:inline-block;
+
+				a {
 					.transit;
-					float: left;
+					display: block;
+					padding: 24px 12px;
+					color: @ltbrown;
+					.neutraBook;
+					line-height: inherit;
+				}
+				ul {
+					.transit;
+					position: absolute;
+					right: 0;
+					display: none;
 					background: @white;
-					a {
+					li {
 						.transit;
-						color: @ltbrown;
-						display: block;
-						padding: 2px 12px 16px 12px;
+						float: left;
+						background: @white;
+						a {
+							.transit;
+							color: @ltbrown;
+							display: block;
+							padding: 2px 12px 16px 12px;
+						}
 					}
 				}
+				&:hover, &.active {
+					.transit;
+					& a {
+						.transit;
+						color: @dkbrown;
+					}
+					& ul {
+						.transit;
+						display: inline-block;
+					}
+				}			
 			}
-			&:hover, &.active {
-				.transit;
-				& a {
-					.transit;
-					color: @dkbrown;
-				}
-				& ul {
-					.transit;
-					display: inline-block;
-				}
-			}			
 		}
 	}
-}
 }
 section.menu-slideout { 
 	z-index: 99999999; 
@@ -471,7 +469,17 @@ footer {
 	}
 }
 
+#homeFadeIns {
+	font-size: 6.5em;
+	line-height: 1em;
+	& * {
+		.neutraDemi;
+		.uppercase;
+		.text-dkgrey;
+		
 
+	}
+}
 
 
 //////// Media Queries [START] ////////

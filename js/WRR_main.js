@@ -79,17 +79,21 @@ $('.trans').each(function(){$(this).height($(this).parent().outerHeight());});
 
 //MainNav Active States
 
-$(".Main_nav ul li").on({
-    mouseover: function() {
-    	if ( $(this).children('ul').length > 0 ) {
-	        $(".Main_nav").addClass("active-hover")
-		}
-    },
-    mouseout: function() {
-        $(".Main_nav").removeClass("active-hover")
-    }
-});
+// $(".Main_nav ul li").on({
+//     mouseover: function() {
+//     	if ( $(this).children('ul').length > 0 ) {
+// 	        $(".Main_nav").addClass("active-hover")
+// 		}
+//     },
+//     mouseout: function() {
+//         $(".Main_nav").removeClass("active-hover")
+//     }
+// });
 
+
+
+// Init Textillate
+$('.tlt').textillate();
 
 
 
