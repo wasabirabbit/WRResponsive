@@ -1,7 +1,8 @@
 
 /*
-Description: WR Responsive
-Author: Wasabi x CWilliams
+Description: __TemplateName
+Developer: __DeveloperName
+Start Date: __StartDate
 */	
 
 var $ = jQuery.noConflict();
@@ -93,7 +94,10 @@ $('.trans').each(function(){$(this).height($(this).parent().outerHeight());});
 
 
 // Init Textillate
-$('.tlt').textillate();
+$(function(){
+	$('.tlt').textillate();
+});
+
 
 
 

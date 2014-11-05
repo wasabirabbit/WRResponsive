@@ -1,0 +1,18 @@
+
+__ The Double Underscore
+	This encompasses anything that must be changed / renamed before even THINKING about uploading to a server
+		In the Template File
+			- Commented Page Template Name in Header
+			- Page title
+			- Favicons
+			- CSS Reset 
+			- CSS Font Kit
+			- MAIN css
+			- JS Page Title Rename
+			- Footer Copyright Company Name
+			- main.js
+
+		In attached files
+			- __main.js
+			- __main.less
+
